@@ -1,0 +1,165 @@
+.container {
+  display: grid;
+  grid-template-columns: 0.5fr 3fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "left right";
+}
+
+tui-island {
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 12.5px );
+}
+
+.logo {
+  width: 6rem;
+}
+.left {
+  background-color: #ffd60a;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  /* padding: 1rem; */
+  z-index: 5;
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.right::before {
+  position: absolute;
+  z-index: -1;
+  content: ' ';
+  margin: -2rem;
+  background-image: url('./../../assets/images/layered-waves-haikei.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    /* left: 10%; */
+}
+.gauges {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.left h1 {
+  font-size: 3.5rem;
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.right {
+  z-index: 100;
+  margin: 2rem;
+  grid-area: right;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-gap: 1rem;
+  grid-template-areas:
+  "temp control"
+  "graph graph";
+}
+
+
+.right h1 {
+  color: #fff;
+  margin-top: 0.5rem;
+}
+
+.temp {
+  grid-area: temp;
+}
+
+.control {
+  grid-area: control;
+}
+
+.graph {
+  grid-area: graph;
+}
+
+.wave {
+    position: absolute;
+    /* aspect-ratio: 900/675; */
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+  background-image: url('./../../assets/images/layered-waves-haikei.svg');
+}
+
+@media screen and (max-width: 768px) {
+  .layer1 {
+    transform: rotate(90deg);
+  }
+
+  .wave {
+    transform: rotate(90deg);
+    aspect-ratio: 675/900;
+    left: 0;
+    top:0;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas: "left"
+                        "right";
+  }
+
+  .left {
+    height: fit-content;
+    flex-direction: row;
+  }
+
+  .right::before {
+    content: none;
+  }
+  .right {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-areas:
+    "temp"
+    "control"
+    "graph";
+  }
+
+}
+
+
+
+
+mwl-gauge {
+  width: 150px;
+  height: 150px;
+  display: block;
+  padding: 10px;
+}
+mwl-gauge > .gauge > .dial {
+  stroke: #eee;
+  stroke-width: 2;
+  fill: rgba(0, 0, 0, 0);
+}
+mwl-gauge > .gauge > .value {
+  stroke: rgb(0, 0, 0);
+  stroke-width: 2;
+  fill: rgba(0, 0, 0, 0);
+}
+mwl-gauge > .gauge > .value-text {
+  fill: rgb(0, 0, 0);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}

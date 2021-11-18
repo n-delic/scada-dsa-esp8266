@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  background-color: #000814;
+}
+
+// This goes into global, unencapsulated styles
+tui-wrapper[data-appearance='custom'] {
+  background: #001d3d;
+  color: #fff;
+
+  &[data-state='hovered'] {
+      background: #003566;
+  }
+
+  &[data-state='pressed'] {
+      background: #ffc300;
+  }
+
+  &[data-state='disabled'] {
+      background: #eaecee;
+  }
+}
