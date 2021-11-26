@@ -1,0 +1,92 @@
+<div class="main-cont">
+  <tui-island class="temp">
+    <h1>CURRENT</h1>
+    <hr />
+    <div [ngSwitch]="currentRoom">
+
+      <!-- SWITCH SOBA -->
+      <div *ngSwitchCase="'soba'" class="gauges">
+        <ngx-gauge [size]="160" [type]="gaugeType" [thresholds]="thresholdConfig" [value]="roomTemp" [thick]="10"
+        label="TEMPERATURA" [min]="-5" [max]="55" append="°C">
+        </ngx-gauge>
+      </div>
+
+      <!-- SWITCH GARAZA -->
+      <div *ngSwitchCase="'garaza'" class="gauges garaza-gauges">
+        <div>
+          <h3>HUNTER</h3>
+          <h2>{{trackSensor ? 'U GARAZI' : 'VAN GARAZE'}}</h2>
+        </div>
+        <div>
+          <h3>ULTRASONIC</h3>
+          <h2>{{ultraSonicSensor}}</h2>
+        </div>
+      </div>
+
+      <!-- SWITCH BAZEN -->
+      <div *ngSwitchCase="'bazen'" class="gauges garaza-gauges">
+        <div>
+          <h3>KISA</h3>
+          <h2>{{humiditySensor>100 ? 'PADA' : 'NE PADA'}}</h2>
+        </div>
+        
+      </div>
+      
+    </div>
+  </tui-island>
+
+  <tui-island class="control">
+    <h1>CONTROL</h1>
+    <hr />
+    <div [ngSwitch]="currentRoom">
+      <div class="control-content" *ngSwitchCase="'soba'" >
+        <button
+          tuiButton
+          type="button"
+          (click)="sendToESP('LD0',1)">
+          Upali diodu
+      </button>
+      <button
+          tuiButton
+          type="button"
+          (click)="sendToESP('LD0',0)"
+      >
+          Ugasi diodu
+      </button>
+      </div>
+
+      <div class="control-content" *ngSwitchCase="'garaza'" >
+        <button
+          tuiButton
+          type="button"
+          (click)="sendToESP('SG0',1)">
+          Otvori vrata
+      </button>
+      <button
+          tuiButton
+          type="button"
+          (click)="sendToESP('SG0',0)"
+      >
+          Zatvori vrata
+      </button>
+      </div>
+
+      <div class="control-content" *ngSwitchCase="'bazen'" >
+        <button
+          tuiButton
+          type="button"
+          (click)="sendToESP('SG1',1)">
+          Otkrij bazen
+      </button>
+      <button
+          tuiButton
+          type="button"
+          (click)="sendToESP('SG1',0)"
+      >
+          Pokrij bazen
+      </button>
+      </div>
+    </div>
+   
+  </tui-island>
+</div>

@@ -1,0 +1,51 @@
+
+  .main-cont {
+    display: grid;
+    grid-template-rows: 1fr
+                        0.5fr;
+    row-gap: 1rem;
+    grid-template-areas:
+    "temp"
+    "control";
+  }
+
+  .temp{
+      grid-area: temp;
+  }
+  .control {
+      grid-area: control;
+  }
+  .control-content {
+    padding: 10px;
+    text-align: center;
+  }
+  .gauges {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .garaza-gauges {
+    text-align: center;
+  }
+  .garaza-gauges h2 {
+    font-size: 2.5rem;
+  }
+  :host ::ng-deep .reading-block {
+    overflow:visible;
+  }
+  button {
+    margin: 0 2%;
+  }
+  :host {
+    --tui-primary: #001d3d;
+    --tui-primary-hover: #003566;
+    --tui-primary-active: #1973c7;
+  
+  }
+  tui-island {
+    background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 12.5px );
+}

@@ -1,60 +1,15 @@
 <tui-root>
   <div class="container">
-    <section class="left">
+    <section class="top">
       <img src="../../assets/images/logo.png" class="logo" />
-      <div tuiGroup class="group" orientation="vertical">
-        <button tuiButton appearance="custom">UREDAJ 1</button>
-        <button tuiButton appearance="custom">UREDAJ 2</button>
-        <button tuiButton appearance="custom">UREDAJ 3</button>
-      </div>
-      <div class="help">
-        <button
-          tuiIconButton
-          appearance="custom"
-          class="tui-space_right-3 tui-space_bottom-3"
-          icon="tuiIconInfoCircleLarge"
-        ></button>
-      </div>
     </section>
-    <!-- <div class="wave layer1"></div> -->
-    <section class="right">
-      <tui-island class="temp">
-        <h1>CURRENT</h1>
-        <hr />
-        <div class="gauges">
-          <mwl-gauge
-          [max]="100"
-          [dialStartAngle]="-90"
-          [dialEndAngle]="-90.001"
-          [value]="50"
-          [animated]="true"
-          [animationDuration]="1"
-        >
-        </mwl-gauge>
-        <mwl-gauge
-          [max]="100"
-          [dialStartAngle]="-90"
-          [dialEndAngle]="-90.001"
-          [value]="50"
-          [animated]="true"
-          [animationDuration]="1"
-        >
-        </mwl-gauge>
-        </div>
-      </tui-island>
-
-      <tui-island class="control">
-        <h1>CONTROL</h1>
-        <hr />
-      </tui-island>
-
-      <tui-island class="graph">
-        <h1>LAST 7 DAYS</h1>
-        <tui-axes class="axes" [verticalLines]="4" [horizontalLines]="2">
-          <tui-line-days-chart [height]="100" [dots]="true">
-          </tui-line-days-chart>
-        </tui-axes>
-      </tui-island>
+    <section class="bottom">
+      <div class="home">
+        <app-kuca></app-kuca>
+      </div>
+      <div class="controls">
+        <router-outlet></router-outlet>
+      </div>
     </section>
   </div>
 </tui-root>

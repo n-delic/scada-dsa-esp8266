@@ -11,12 +11,18 @@ import { HomeComponent } from './home/home.component';
 import {TuiGroupModule} from '@taiga-ui/core';
 
 import { TuiAxesModule, TuiLineChartModule, TuiLineDaysChartModule } from "@taiga-ui/addon-charts";
-import { GaugeModule } from "angular-gauge";
+import { KucaComponent } from './components/kuca/kuca.component';
+import { ControlsComponent } from './components/controls/controls.component';
+import { NgxGaugeModule } from "ngx-gauge";
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    KucaComponent,
+    ControlsComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,7 @@ import { GaugeModule } from "angular-gauge";
       TuiAxesModule,
       TuiLineChartModule,
       TuiLineDaysChartModule,
-      GaugeModule.forRoot(),
+      NgxGaugeModule
 ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent]
