@@ -1,7 +1,7 @@
 <h1>{{currentRoom | uppercase}}</h1>
 <div class="main-cont">
   <tui-island class="temp">
-    <h1>TRENUTNE VRIJEDNOSTI</h1>
+    <h2>TRENUTNE VRIJEDNOSTI</h2>
     <hr />
     <div *ngIf="isReading" class="gauges">
       <h1>Loading...</h1>
@@ -34,7 +34,10 @@
             <h3>KISA</h3>
             <h2>{{humiditySensor>100 ? 'PADA' : 'NE PADA'}}</h2>
           </div>
-          
+          <div>
+            <h3>DAN/NOC</h3>
+            <h2>{{getStatus()}}</h2>
+          </div>
         </div>
         
       
@@ -43,7 +46,7 @@
   </tui-island>
 
   <tui-island class="control">
-    <h1>KONTROLA</h1>
+    <h2>KONTROLA</h2>
     <hr />
     <div *ngIf="isReading" class="gauges">
       <h1>Loading...</h1>

@@ -7,13 +7,13 @@ import {TuiIslandModule} from '@taiga-ui/kit';
 import {TuiInputPasswordModule} from '@taiga-ui/kit';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { KucaComponent } from './components/kuca/kuca.component';
 import { ControlsComponent } from './components/controls/controls.component';
 import { NgxGaugeModule } from "ngx-gauge";
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { AppComponent } from "./app.component";
 
 @NgModule({
   declarations: [

@@ -24,6 +24,7 @@ export class ControlsComponent implements OnInit, OnDestroy {
   trackSensor: number = 0;
   ultraSonicSensor: number = 0;
   humiditySensor: number = 0;
+  fotoSensor: number = 0;
 
   isReading: boolean = true;
   // GAUGE SETTINGS //
@@ -62,6 +63,16 @@ export class ControlsComponent implements OnInit, OnDestroy {
     this.wsClient.next({id:0,message:message});
   }
 
+  getStatus() : string {
+    if(this.fotoSensor<=200) {
+      return 'SUNCAN DAN';
+    } else if(this.fotoSensor>200 && this.fotoSensor<=800) {
+      return 'TMURAN DAN';
+    } else {
+      return 'NOC';
+    }
+  }
+
   setData(sensor: string, value: number) {
     switch(sensor) {
       case 'TER':
@@ -75,6 +86,9 @@ export class ControlsComponent implements OnInit, OnDestroy {
         break;
       case 'TRC':
         this.trackSensor = value;
+        break;
+      case 'FOT':
+        this.fotoSensor = value;
         break;
     }
   }

@@ -15,11 +15,15 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('isActivated') === 'true') {
+      this.isActivated = true;
+    }
   }
 
   provjeri() {
     if(this.form.controls['valid'].value === "jakpasswordbgm") {
       this.isActivated=true;
+      localStorage.setItem('isActivated','true');
       return;
     } else {
       return;
