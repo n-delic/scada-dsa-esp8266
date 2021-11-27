@@ -1,5 +1,6 @@
 
   .main-cont {
+
     padding-right: 2rem;
     display: grid;
     grid-template-rows: 1fr
@@ -23,21 +24,27 @@
   .gauges {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 10px;
   }
 
-  .garaza-gauges {
+  .other-gauges {
     text-align: center;
   }
-  .garaza-gauges h2 {
-    font-size: 2.5rem;
-  }
+  .other-gauges h2 {
+    font-size: 2rem;
+  } 
 
   @media screen and (max-width:768px) {
     .main-cont {
       padding-right: 0.5rem;
       padding-left: 0.5rem;
+    }
+
+    .other-gauges {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     

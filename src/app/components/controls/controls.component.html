@@ -12,7 +12,7 @@
       </div>
 
       <!-- SWITCH GARAZA -->
-      <div *ngSwitchCase="'garaza'" class="gauges garaza-gauges">
+      <div *ngSwitchCase="'garaza'" class="gauges other-gauges">
         <div>
           <h3>HUNTER</h3>
           <h2>{{trackSensor ? 'U GARAZI' : 'VAN GARAZE'}}</h2>
@@ -24,7 +24,7 @@
       </div>
 
       <!-- SWITCH BAZEN -->
-      <div *ngSwitchCase="'bazen'" class="gauges garaza-gauges">
+      <div *ngSwitchCase="'bazen'" class="gauges other-gauges">
         <div>
           <h3>KISA</h3>
           <h2>{{humiditySensor>100 ? 'PADA' : 'NE PADA'}}</h2>
