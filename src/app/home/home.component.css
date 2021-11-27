@@ -40,11 +40,10 @@
 .bottom {
   margin: auto 0;
   z-index: 100;
-  padding: 2rem;
   background-color: #ffd60a;
   grid-area: bottom;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2.5fr 1.5fr;
   grid-gap: 1rem;
   grid-template-areas:
   "home controls";
