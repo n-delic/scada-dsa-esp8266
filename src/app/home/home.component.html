@@ -1,15 +1,32 @@
 <tui-root>
+
   <div class="container">
     <div class="top">
       <a [routerLink]="['/']"><img src="../../assets/images/logo.png" class="logo" /></a>
     </div>
-    <div class="bottom">
+    <div class="bottom"*ngIf="isActivated">
       <div class="home">
         <app-kuca></app-kuca>
       </div>
-      <div class="controls">
+      <div class="controls" >
         <router-outlet></router-outlet>
       </div>
     </div>
+   
+      <form [formGroup]="form" *ngIf="!isActivated" class="aktivacija">
+        <label for="activate" class="tui-form__header">Unesite kod za aktivaciju</label>
+        <tui-input-password class="b-form"  name="activate" formControlName="valid">
+          Kod za validaciju
+        </tui-input-password>
+      <button
+      tuiButton
+      type="button"
+      (click)="provjeri()"
+  >
+      Provjeri
+  </button>
+      </form>
+    
   </div>
+  
 </tui-root>

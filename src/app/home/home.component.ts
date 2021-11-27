@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TuiDay, TUI_DEFAULT_STRINGIFY } from '@taiga-ui/cdk';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +7,24 @@ import { TuiDay, TUI_DEFAULT_STRINGIFY } from '@taiga-ui/cdk';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  dayPoints = Array.from({length: 12}, (_, i) => [
-    new TuiDay(2020, 4, 1).append({day: i * 30}),
-    Math.floor(Math.random() * 100)
-]);
-
-readonly stringify = TUI_DEFAULT_STRINGIFY;
+  isActivated: boolean = false;
+  form:FormGroup = new FormGroup({
+    valid: new FormControl('')
+  }) 
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  provjeri() {
+    console.log(this.form.value);
+    if(this.form.controls['valid'].value === "KRISNA") {
+      this.isActivated=true;
+      return;
+    } else {
+      return;
+    }
   }
 
 }

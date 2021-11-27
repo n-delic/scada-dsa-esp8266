@@ -49,6 +49,13 @@
   grid-area: home;
 }
 
+.aktivacija {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: space-around;
+  margin: auto;
+}
 
 @media screen and (max-width: 768px) {
 

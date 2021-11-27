@@ -4,6 +4,7 @@ import { TuiRootModule, TuiButtonModule, TUI_SANITIZER, TuiHintModule } from "@t
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {TuiIslandModule} from '@taiga-ui/kit';
+import {TuiInputPasswordModule} from '@taiga-ui/kit';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { KucaComponent } from './components/kuca/kuca.component';
 import { ControlsComponent } from './components/controls/controls.component';
 import { NgxGaugeModule } from "ngx-gauge";
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
       TuiIslandModule,
       TuiButtonModule,
       NgxGaugeModule,
-      TuiHintModule
+      TuiHintModule,
+      TuiInputPasswordModule,
+      ReactiveFormsModule
 ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent]
