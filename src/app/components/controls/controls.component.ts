@@ -25,8 +25,7 @@ export class ControlsComponent implements OnInit, OnDestroy {
   ultraSonicSensor: number = 0;
   humiditySensor: number = 0;
 
-  doorOpen: boolean = true;  
-
+  isReading: boolean = true;
   // GAUGE SETTINGS //
   gaugeType: NgxGaugeType = "semi";
   thresholdConfig = {
@@ -45,12 +44,13 @@ export class ControlsComponent implements OnInit, OnDestroy {
         this.currentRoom = value[0].path;
       }
     }).unsubscribe();
-    
     this.wsClient.subscribe((value: any) => {
       let data = this.parseMessage(value.message);
       this.setData(data.sensor,data.data);
+      this.isReading = false;
     }
     );
+    
   }
 
   ngOnDestroy() {

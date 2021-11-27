@@ -2,43 +2,52 @@
   <tui-island class="temp">
     <h1>TRENUTNE VRIJEDNOSTI</h1>
     <hr />
-    <div [ngSwitch]="currentRoom">
+    <div *ngIf="isReading" class="gauges">
+      <h1>Loading...</h1>
+    </div>
+    
+      <div *ngIf="!isReading" [ngSwitch]="currentRoom">
 
-      <!-- SWITCH SOBA -->
-      <div *ngSwitchCase="'soba'" class="gauges">
-        <ngx-gauge [size]="160" [type]="gaugeType" [thresholds]="thresholdConfig" [value]="roomTemp" [thick]="10"
-        label="TEMPERATURA" [min]="-5" [max]="55" append="°C">
-        </ngx-gauge>
-      </div>
-
-      <!-- SWITCH GARAZA -->
-      <div *ngSwitchCase="'garaza'" class="gauges other-gauges">
-        <div>
-          <h3>AUTO</h3>
-          <h2>{{trackSensor ? 'U GARAZI' : 'VAN GARAZE'}}</h2>
+        <!-- SWITCH SOBA -->
+        <div *ngSwitchCase="'soba'" class="gauges">
+          <ngx-gauge [size]="160" [type]="gaugeType" [thresholds]="thresholdConfig" [value]="roomTemp" [thick]="10"
+          label="TEMPERATURA" [min]="-5" [max]="55" append="°C">
+          </ngx-gauge>
         </div>
-        <div>
-          <h3>ULTRASONIC</h3>
-          <h2>{{ultraSonicSensor}}</h2>
+  
+        <!-- SWITCH GARAZA -->
+        <div *ngSwitchCase="'garaza'" class="gauges other-gauges">
+          <div>
+            <h3>AUTO</h3>
+            <h2>{{trackSensor ? 'U GARAZI' : 'VAN GARAZE'}}</h2>
+          </div>
+          <div>
+            <h3>ULTRASONIC</h3>
+            <h2>{{ultraSonicSensor}}</h2>
+          </div>
         </div>
-      </div>
-
-      <!-- SWITCH BAZEN -->
-      <div *ngSwitchCase="'bazen'" class="gauges other-gauges">
-        <div>
-          <h3>KISA</h3>
-          <h2>{{humiditySensor>100 ? 'PADA' : 'NE PADA'}}</h2>
+  
+        <!-- SWITCH BAZEN -->
+        <div *ngSwitchCase="'bazen'" class="gauges other-gauges">
+          <div>
+            <h3>KISA</h3>
+            <h2>{{humiditySensor>100 ? 'PADA' : 'NE PADA'}}</h2>
+          </div>
+          
         </div>
         
-      </div>
       
     </div>
+    
   </tui-island>
 
   <tui-island class="control">
     <h1>KONTROLA</h1>
     <hr />
-    <div [ngSwitch]="currentRoom">
+    <div *ngIf="isReading" class="gauges">
+      <h1>Loading...</h1>
+    </div>
+    <div *ngIf="!isReading" [ngSwitch]="currentRoom">
       <div class="control-content" *ngSwitchCase="'soba'" >
         <button
           tuiButton

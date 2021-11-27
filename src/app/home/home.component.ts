@@ -18,8 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   provjeri() {
-    console.log(this.form.value);
-    if(this.form.controls['valid'].value === "KRISNA") {
+    if(this.form.controls['valid'].value === "jakpasswordbgm") {
       this.isActivated=true;
       return;
     } else {
