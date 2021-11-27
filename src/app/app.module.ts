@@ -1,6 +1,6 @@
 import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { TuiRootModule, TuiButtonModule, TUI_SANITIZER } from "@taiga-ui/core";
+import { TuiRootModule, TuiButtonModule, TUI_SANITIZER, TuiHintModule } from "@taiga-ui/core";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {TuiIslandModule} from '@taiga-ui/kit';
@@ -28,7 +28,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
       BrowserAnimationsModule,
       TuiIslandModule,
       TuiButtonModule,
-      NgxGaugeModule
+      NgxGaugeModule,
+      TuiHintModule
 ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent]

@@ -1,15 +1,15 @@
 <tui-root>
   <div class="container">
-    <section class="top">
-      <img src="../../assets/images/logo.png" class="logo" />
-    </section>
-    <section class="bottom">
+    <div class="top">
+      <a [routerLink]="['/']"><img src="../../assets/images/logo.png" class="logo" /></a>
+    </div>
+    <div class="bottom">
       <div class="home">
         <app-kuca></app-kuca>
       </div>
       <div class="controls">
         <router-outlet></router-outlet>
       </div>
-    </section>
+    </div>
   </div>
 </tui-root>

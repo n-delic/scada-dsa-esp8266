@@ -1,6 +1,5 @@
 
   .main-cont {
-
     padding-right: 2rem;
     display: grid;
     grid-template-rows: 1fr
@@ -62,7 +61,13 @@
   
   }
   tui-island {
+    color: #001D3D;
     background: rgba( 255, 255, 255, 0.25 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12.5px );
+  border: 0px;
+}
+
+:host ::ng-deep tui-island {
+  border: 0px;
 }

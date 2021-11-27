@@ -1,23 +1,26 @@
 .slikakuce {
     width: 60vw;
-    height: fit-content;
+    padding: 1.5rem;
     margin: 0 auto;
+    height: fit-content;
+    display: flex;
+    align-items: center;
   }
 
 .garaza {
   top: 31.5%;
-  left: 47.5%;
+  left: 48%;
 }
 
 
 .bazen {
   top: 31.5%;
-  left: 77%;
+  left: 79%;
 }
 
 .sijalica {
   top: 46%;
-  left: 17.5%;
+  left: 16.5%;
 }
 
 .containerr {
@@ -88,19 +91,37 @@
 
 @media screen and (max-width: 768px) {
   .slikakuce {
-    width: 100vw;
+    width: 80vw;
   }
   .garaza {
-    left: 49%;
+    left: 48%;
   }
   
   
   .bazen {
-    left: 79%;
+    left: 74%;
   }
   
   .sijalica {
     top: 46%;
-    left: 17.5%;
+    left: 22%;
   }
+}
+
+:host {
+  --tui-primary: #001d3d;
+    --tui-primary-hover: #003566;
+    --tui-primary-active: #1973c7;
+}
+
+tui-island {
+    color: #001D3D;
+    background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 12.5px );
+  border: 0px #fff; 
+}
+
+::ng-deep .tui-island:not(.tui-island_hoverable):before {
+  border: 0px;
 }
