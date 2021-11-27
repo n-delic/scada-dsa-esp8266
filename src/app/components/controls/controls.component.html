@@ -1,6 +1,6 @@
 <div class="main-cont">
   <tui-island class="temp">
-    <h1>CURRENT</h1>
+    <h1>TRENUTNE VRIJEDNOSTI</h1>
     <hr />
     <div [ngSwitch]="currentRoom">
 
@@ -14,7 +14,7 @@
       <!-- SWITCH GARAZA -->
       <div *ngSwitchCase="'garaza'" class="gauges other-gauges">
         <div>
-          <h3>HUNTER</h3>
+          <h3>AUTO</h3>
           <h2>{{trackSensor ? 'U GARAZI' : 'VAN GARAZE'}}</h2>
         </div>
         <div>
@@ -36,7 +36,7 @@
   </tui-island>
 
   <tui-island class="control">
-    <h1>CONTROL</h1>
+    <h1>KONTROLA</h1>
     <hr />
     <div [ngSwitch]="currentRoom">
       <div class="control-content" *ngSwitchCase="'soba'" >
